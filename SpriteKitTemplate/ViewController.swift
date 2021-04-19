@@ -18,13 +18,12 @@ class ViewController: NSViewController {
 
         if let view = self.skView {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+            let scene = GameScene.init(size: CGSize.init(width: 1000, height: 1000))
+            // Set the scale mode to scale to fit the window
+            scene.scaleMode = .aspectFit
                 
-                // Present the scene
-                view.presentScene(scene)
-            }
+            // Present the scene
+            view.presentScene(scene)
             
             view.ignoresSiblingOrder = true
             
